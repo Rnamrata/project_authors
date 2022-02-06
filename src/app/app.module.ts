@@ -3,17 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListItemComponent } from './list-item/list-item.component';
+import { AuthorListComponent } from './author-list/author-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import {AuthorCardModule} from './shared/author-card/author-card.module';
+import {ListItemModule} from './shared/list-item/list-item.module';
 import {PaginationModule} from './shared/pagination/pagination.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListItemComponent,
+    AuthorListComponent,
     SideBarComponent,
   ],
   imports: [
@@ -21,7 +21,7 @@ import {PaginationModule} from './shared/pagination/pagination.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AuthorCardModule,
+    ListItemModule,
     PaginationModule,
   ],
   providers: [],

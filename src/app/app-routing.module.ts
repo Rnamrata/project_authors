@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
-import {ListItemModule} from './list-item/list-item.module';
+import {AuthorListModule} from './author-list/author-list.module';
 
 const routes: Routes = [
   {
     path: 'authors',
-    loadChildren: () => import('./list-item/list-item.module').then(m => m.ListItemModule),
+    loadChildren: () => import('./author-list/author-list.module').then(m => m.AuthorListModule),
   },
   {
     path: 'favourite_author',

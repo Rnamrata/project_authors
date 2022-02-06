@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FavouriteAuthorListRoutingModule } from './favourite-author-list-routing.module';
-import {AuthorCardModule} from '../shared/author-card/author-card.module';
+import {ListItemModule} from '../shared/list-item/list-item.module';
+import {PaginationModule} from '../shared/pagination/pagination.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import {AuthorCardModule} from '../shared/author-card/author-card.module';
   imports: [
     CommonModule,
     FavouriteAuthorListRoutingModule,
-    AuthorCardModule
+    ListItemModule,
+    PaginationModule
   ]
 })
 export class FavouriteAuthorListModule { }

@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-author-card',
-  templateUrl: './author-card.component.html',
-  styleUrls: ['./author-card.component.scss']
+  selector: 'app-list-item',
+  templateUrl: './list-item.component.html',
+  styleUrls: ['./list-item.component.scss']
 })
-export class AuthorCardComponent implements OnInit {
+export class ListItemComponent implements OnInit {
 
   @Input() author: any;
   @Output() favAuthorValueEvent = new EventEmitter();

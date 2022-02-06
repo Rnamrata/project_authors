@@ -1,7 +1,7 @@
 <div *ngIf="authorsData.length > 0">
   <div class="row card-group no-gutters" >
     <div class="col-md-6 col-sm-6 col-12" *ngFor="let author of authorsData">
-      <app-author-card (favAuthorValueEvent)="updateFavourite($event)" [author]="author"></app-author-card>
+      <app-list-item (favAuthorValueEvent)="updateFavourite($event)" [author]="author"></app-list-item>
     </div>
   </div>
 </div>

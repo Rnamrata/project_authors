@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ListItemRoutingModule } from './list-item-routing.module';
+import { AuthorListRoutingModule } from './author-list-routing.module';
 import { FavouriteAuthorListComponent } from '../favourite-author-list/favourite-author-list.component';
-import {AuthorCardModule} from '../shared/author-card/author-card.module';
+import {ListItemModule} from '../shared/list-item/list-item.module';
 import {PaginationModule} from '../shared/pagination/pagination.module';
 
 @NgModule({
   declarations: [FavouriteAuthorListComponent],
   imports: [
     CommonModule,
-    ListItemRoutingModule,
-    AuthorCardModule,
+    AuthorListRoutingModule,
+    ListItemModule,
     PaginationModule
   ]
 })
-export class ListItemModule { }
+export class AuthorListModule { }

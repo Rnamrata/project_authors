@@ -3,11 +3,11 @@ import {ListItemService} from '../services/list-item.service';
 
 
 @Component({
-  selector: 'app-list-item',
-  templateUrl: './list-item.component.html',
-  styleUrls: ['./list-item.component.scss']
+  selector: 'app-author-list',
+  templateUrl: './author-list.component.html',
+  styleUrls: ['./author-list.component.scss']
 })
-export class ListItemComponent implements OnInit {
+export class AuthorListComponent implements OnInit {
 
   authorsData = [{
     _id: '',

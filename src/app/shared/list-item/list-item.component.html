@@ -1,12 +1,12 @@
 <div class="author card">
   <div class="row no-gutters">
-    <div class="col-10">
+    <div class="col-9">
       <div>
         <label><b>Name : </b></label>
         <span>{{author.name}}</span>
       </div>
     </div>
-    <div class="col-2">
+    <div class="col-3">
       <button class="btn btn-outline-primary btn-sm fav-button" (click)="updateFavourite(author)"
               *ngIf="!author.isFavourite">Add Favourite</button>
       <button class="btn btn-outline-primary btn-sm fav-button" (click)="updateFavourite(author)"
