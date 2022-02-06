@@ -1,0 +1,38 @@
+.author {
+  height: 17vh;
+  margin: 8px 0px;
+  padding: 10px;
+  color: black;
+  background-color: #C5E7E9;
+
+  .fav-button {
+
+  }
+
+  .fav-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.pagination {
+  text-align: center;
+  justify-content: center;
+  border: 0.05rem solid black;
+  border-radius: 0.5rem;
+  padding-top: 5px;
+
+  .pag-nav {
+    color: #000000;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .page-number {
+    padding: 0.25rem;
+  }
+}
+
+
+
+
