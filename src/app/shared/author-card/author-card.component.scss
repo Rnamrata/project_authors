@@ -1,0 +1,15 @@
+.author {
+  height: 17vh;
+  margin: 8px 0px;
+  padding: 10px;
+  color: black;
+  background-color: #C5E7E9;
+
+  .fav-button {
+  }
+
+  .fav-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}

@@ -1,28 +1,6 @@
 <div class="row card-group no-gutters">
   <div class="col-md-6 col-sm-6 col-12" *ngFor="let author of authorsData">
-    <div class="author card">
-      <div class="row no-gutters">
-        <div class="col-10">
-          <div>
-            <label><b>Name : </b></label>
-            <span>{{author.name}}</span>
-          </div>
-        </div>
-        <div class="col-2">
-          <button class="btn btn-outline-primary btn-sm fav-button" (click)="updateFavourite(author)"
-                  *ngIf="!author.isFavourite">Add Favourite</button>
-          <button class="btn btn-outline-primary btn-sm fav-button" (click)="updateFavourite(author)"
-                  *ngIf="author.isFavourite">Remove Favourite</button>
-        </div>
-      </div>
-      <div>
-        <label><b>Bio : </b></label>
-        <span>{{author.bio}}</span>
-        <br>
-        <label><b>link : </b></label>
-        <span><a href="`${author.link}`">{{author.link}}</a></span>
-      </div>
-    </div>
+    <app-author-card (favAuthorValueEvent)="updateFavourite($event)" [author]="author"></app-author-card>
   </div>
 </div>
 <div class="pagination">

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {Author} from '../interfaces/author';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,28 @@ import {environment} from '../../environments/environment';
 export class ListItemService {
 
   favouriteAuthor = [];
+  author: BehaviorSubject<Author>;
 
   constructor(
     private http: HttpClient,
-  ) { }
+  ) {
+    this.author = new BehaviorSubject<Author>({
+      _id: '',
+      bio: '',
+      dateAdded: '',
+      dateModified: '',
+      description: '',
+      link: '',
+      name: '',
+      quoteCount: 0,
+      slug: '',
+      isFavourite: false
+    });
+  }
+
+  setAuthorInfo(newValue: Author): void {
+    this.author.next(newValue);
+  }
 
   getAuthors(body: any): Observable<any> {
     const headers = {};
@@ -48,12 +67,10 @@ export class ListItemService {
 
   checkFavouriteValue(author: any): boolean {
     let count = 0;
-    // console.log(this.favouriteAuthor);
     if (this.favouriteAuthor.length == 0) {
       return false;
     }
     else {
-      // @ts-ignore
       this.favouriteAuthor.forEach( element => {
         // @ts-ignore
         console.log(element._id === author._id);
@@ -62,7 +79,6 @@ export class ListItemService {
           count++;
         }
       });
-
       return count > 0;
     }
   }

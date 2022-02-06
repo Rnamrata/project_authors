@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,12 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import {AuthorCardModule} from './shared/author-card/author-card.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListItemComponent,
-    SideBarComponent
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,11 +24,16 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatGridListModule,
+    AuthorCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
     MatSidenavModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ]
 })
 export class AppModule { }

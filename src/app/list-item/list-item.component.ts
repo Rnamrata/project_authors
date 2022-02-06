@@ -29,17 +29,20 @@ export class ListItemComponent implements OnInit {
     private listItemService: ListItemService,
   ) { }
 
-  getAuthorsList(): void {
-    this.listItemService.getAuthors(this.dataInfo).subscribe( (data: any) => {
+  async getAuthorsList(): Promise<void> {
+    let data: any;
+    try {
+        data = await this.listItemService.getAuthors(this.dataInfo).toPromise();
         this.dataInfo.page = data.page;
         this.dataInfo.totalPages = data.totalPages;
         this.dataInfo.skip = data.page * this.dataInfo.limit;
         this.authorsData = data.results;
         this.setFavouriteValue();
-      },
-      (error: any) => {
-        console.log(error.message);
-      });
+        console.log(this.authorsData);
+      }
+    catch (error) {
+    console.log(error);
+  }
   }
 
   navigatePage(navigation: string): void {

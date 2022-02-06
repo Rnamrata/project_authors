@@ -8,8 +8,8 @@ const routes: Routes = [
     loadChildren: () => import('./list-item/list-item.module').then(m => m.ListItemModule),
   },
   {
-    path: 'authors/:favourite',
-    loadChildren: () => import('./list-item/favourite-author-list/favourite-author-list.module').then(m => m.FavouriteAuthorListModule),
+    path: 'favourite_author',
+    loadChildren: () => import('./favourite-author-list/favourite-author-list.module').then(m => m.FavouriteAuthorListModule),
   },
   {
     path: '',
