@@ -1,0 +1,17 @@
+.pagination {
+  text-align: center;
+  justify-content: center;
+  border: 0.05rem solid #03172E;
+  border-radius: 0.5rem;
+  color: #03172E;
+
+  .pag-nav {
+    color: #03172E;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .page-number {
+    padding: 0.75rem;
+  }
+}

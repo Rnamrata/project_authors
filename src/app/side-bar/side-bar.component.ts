@@ -13,7 +13,6 @@ export class SideBarComponent implements OnInit {
   ) { }
 
   async navigateTap(tab?: string): Promise<void> {
-    console.log(tab);
     if (tab == 'favourite') {
       await this.router.navigate(['/favourite_author']
       );

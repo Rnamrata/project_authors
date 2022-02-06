@@ -1,10 +1,8 @@
-<div class="row card-group no-gutters">
-  <div class="col-md-6 col-sm-6 col-12" *ngFor="let author of authorsData">
-    <app-author-card (favAuthorValueEvent)="updateFavourite($event)" [author]="author"></app-author-card>
+<div *ngIf="authorsData.length > 0">
+  <div class="row card-group no-gutters" >
+    <div class="col-md-6 col-sm-6 col-12" *ngFor="let author of authorsData">
+      <app-author-card (favAuthorValueEvent)="updateFavourite($event)" [author]="author"></app-author-card>
+    </div>
   </div>
 </div>
-<div class="pagination">
-  <span class="pag-nav" (click)="navigatePage('previous')"><i class="fa fa-caret-left"></i></span>
-  <span class="page-number">Page {{dataInfo.page}}</span>
-  <span class="pag-nav" (click)="navigatePage('next')"><i class="fa fa-caret-right"></i></span>
-</div>
+<app-pagination (pageNavigationEvent)="navigatePage($event)" [page]="dataInfo.page"></app-pagination>

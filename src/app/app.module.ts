@@ -6,10 +6,9 @@ import { AppComponent } from './app.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatGridListModule} from '@angular/material/grid-list';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import {AuthorCardModule} from './shared/author-card/author-card.module';
+import {PaginationModule} from './shared/pagination/pagination.module';
 
 @NgModule({
   declarations: [
@@ -22,15 +21,12 @@ import {AuthorCardModule} from './shared/author-card/author-card.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatGridListModule,
     AuthorCardModule,
+    PaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-    MatSidenavModule
-  ],
+  exports: [],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA

@@ -62,7 +62,6 @@ export class ListItemService {
         this.favouriteAuthor.push(data);
       }
     }
-    console.log(this.favouriteAuthor);
   }
 
   checkFavouriteValue(author: any): boolean {
@@ -72,8 +71,6 @@ export class ListItemService {
     }
     else {
       this.favouriteAuthor.forEach( element => {
-        // @ts-ignore
-        console.log(element._id === author._id);
         // @ts-ignore
         if (element._id === author._id ) {
           count++;

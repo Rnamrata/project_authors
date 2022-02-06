@@ -38,14 +38,13 @@ export class ListItemComponent implements OnInit {
         this.dataInfo.skip = data.page * this.dataInfo.limit;
         this.authorsData = data.results;
         this.setFavouriteValue();
-        console.log(this.authorsData);
       }
     catch (error) {
     console.log(error);
   }
   }
 
-  navigatePage(navigation: string): void {
+  navigatePage(navigation: any): void {
     this.navigation = navigation;
     if ( this.dataInfo.page != 1 && navigation == 'previous') {
       this.dataInfo.skip = this.dataInfo.skip - (this.dataInfo.limit * 2);
@@ -67,7 +66,6 @@ export class ListItemComponent implements OnInit {
       if (element._id === author._id) {
         element.isFavourite = !element.isFavourite;
         this.listItemService.setLocalStorageData(author);
-        console.log(element);
       }
     });
   }

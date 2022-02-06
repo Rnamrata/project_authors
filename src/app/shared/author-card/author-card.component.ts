@@ -17,7 +17,6 @@ export class AuthorCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.author);
   }
 
 }
