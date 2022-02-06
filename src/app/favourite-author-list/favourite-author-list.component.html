@@ -1,0 +1,7 @@
+<div class="row card-group no-gutters">
+  <div class="col-md-6 col-sm-6 col-12" *ngFor="let author of showData">
+    <app-list-item [author]="author" (favAuthorValueEvent)="updateFavourite($event)"></app-list-item>
+  </div>
+</div>
+<app-pagination (pageNavigationEvent)="navigatePage($event)" [page]="dataInfo.page"></app-pagination>
+

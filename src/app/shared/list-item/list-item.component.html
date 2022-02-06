@@ -1,0 +1,23 @@
+<div class="author card">
+  <div class="row no-gutters">
+    <div class="col-9">
+      <div>
+        <label><b>Name : </b></label>
+        <span>{{author.name}}</span>
+      </div>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-outline-primary btn-sm fav-button" (click)="updateFavourite(author)"
+              *ngIf="!author.isFavourite">Add Favourite</button>
+      <button class="btn btn-outline-primary btn-sm fav-button" (click)="updateFavourite(author)"
+              *ngIf="author.isFavourite">Remove Favourite</button>
+    </div>
+  </div>
+  <div>
+    <label><b>Bio : </b></label>
+    <span>{{author.bio}}</span>
+    <br>
+    <label><b>link : </b></label>
+    <span><a href="`${author.link}`">{{author.link}}</a></span>
+  </div>
+</div>
