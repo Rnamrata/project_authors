@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Author} from '../../interfaces/author';
 
 @Component({
   selector: 'app-list-item',
@@ -7,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ListItemComponent implements OnInit {
 
-  @Input() author: any;
+  @Input() author!: Author;
   @Output() favAuthorValueEvent = new EventEmitter();
 
   constructor() { }

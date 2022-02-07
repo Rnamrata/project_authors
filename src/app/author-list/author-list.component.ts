@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ListItemService} from '../services/list-item.service';
-
+import {Author} from '../interfaces/author';
 
 @Component({
   selector: 'app-author-list',
@@ -9,13 +9,7 @@ import {ListItemService} from '../services/list-item.service';
 })
 export class AuthorListComponent implements OnInit {
 
-  authorsData = [{
-    _id: '',
-    name: '',
-    bio: '',
-    link: '',
-    isFavourite: false
-  }];
+  authorsData: Author[] = [];
 
   dataInfo = {
     limit: 10,

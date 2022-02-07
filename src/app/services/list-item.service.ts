@@ -9,7 +9,7 @@ import {Author} from '../interfaces/author';
 })
 export class ListItemService {
 
-  favouriteAuthor = [];
+  favouriteAuthor: Author[]  = [];
   author: BehaviorSubject<Author>;
 
   constructor(
@@ -41,24 +41,20 @@ export class ListItemService {
     return this.http.get(environment.apiUrl + '/authors', {headers, params});
   }
 
-  setLocalStorageData(data: any): void {
+  setLocalStorageData(data: Author): void {
     if (this.favouriteAuthor.length == 0) {
-      // @ts-ignore
       this.favouriteAuthor.push(data);
     }
     else {
       if (!data.isFavourite) {
         this.favouriteAuthor.forEach( element => {
-          // @ts-ignore
           if (element._id === data._id) {
-            // @ts-ignore
             const i = this.favouriteAuthor.findIndex((item) => item._id === element._id);
             this.favouriteAuthor.splice(i, 1);
           }
         });
       }
       else {
-        // @ts-ignore
         this.favouriteAuthor.push(data);
       }
     }
@@ -71,7 +67,6 @@ export class ListItemService {
     }
     else {
       this.favouriteAuthor.forEach( element => {
-        // @ts-ignore
         if (element._id === author._id ) {
           count++;
         }
